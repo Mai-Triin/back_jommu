@@ -13,17 +13,12 @@ public class LoginController {
     @Resource
     private LoginService loginService;
 
-    @GetMapping("/athlete/login")
+    @GetMapping("/login")
     @Operation(summary = "Logib teenusesse sisse ja vea korral kuvab errori")
-    public UserDto loginAthlete(@RequestParam String username, @RequestParam String password) {
-        UserDto login = loginService.loginAthlete(username, password);
-        return login;
-    }
-
-    @GetMapping("/trainer/login")
-    @Operation(summary = "Logib teenusesse sisse ja vea korral kuvab errori")
-    public UserDto loginTrainer(@RequestParam String username, @RequestParam String password) {
-        UserDto login = loginService.loginTrainer(username, password);
+    public UserDto loginAthlete(@RequestParam String username,
+                                @RequestParam String password,
+                                @RequestParam String roleType) {
+        UserDto login = loginService.loginUser(username, password, roleType);
         return login;
     }
 }
