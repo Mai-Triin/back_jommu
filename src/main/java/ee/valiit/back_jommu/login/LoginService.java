@@ -16,8 +16,13 @@ public class LoginService {
     @Resource
     private UserMapper userMapper;
 
-    public UserDto login(String username, String password) {
-        User user = userService.getValidUser(username, password);
+    public UserDto loginAthlete(String username, String password) {
+        User user = userService.getValidAthlete(username, password);
+        UserDto userDto = userMapper.userToUserDto(user);
+        return userDto;
+    }
+    public UserDto loginTrainer(String username, String password) {
+        User user = userService.getValidTrainer(username, password);
         UserDto userDto = userMapper.userToUserDto(user);
         return userDto;
     }

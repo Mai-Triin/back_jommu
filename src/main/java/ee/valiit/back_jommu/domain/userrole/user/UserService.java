@@ -9,14 +9,22 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    private static final String ATHLETE = "Treenitav";
+    private static final String TRAINER = "Treener";
+
     @Resource
     private UserRepository userRepository;
 
-    public User getValidUser(String username, String password) {
-        Optional<User> userOptional = userRepository.findUserBy(username, password);
+    public User getValidAthlete(String username, String password) {
+        Optional<User> userOptional = userRepository.findUserByRole(username, password, ATHLETE);
         Validation.validateUserCredentials(userOptional);
         User user = userOptional.get();
-
+        return user;
+    }
+    public User getValidTrainer(String username, String password) {
+        Optional<User> userOptional = userRepository.findUserByRole(username, password, TRAINER);
+        Validation.validateUserCredentials(userOptional);
+        User user = userOptional.get();
         return user;
     }
 
