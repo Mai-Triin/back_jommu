@@ -1,12 +1,10 @@
 package ee.valiit.back_jommu.business.register;
 
-import ee.valiit.back_jommu.domain.userrole.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
