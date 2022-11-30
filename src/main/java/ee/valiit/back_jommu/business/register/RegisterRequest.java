@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -16,9 +17,9 @@ public class RegisterRequest implements Serializable {
     private String lastName;
     private String dateOfBirth;
     private Character gender;
-    private Role role;
+    private Integer roleId;
     private String email;
-    private Boolean termsAccept;
+    private Boolean termsAccept = false;
     private String username;
     private String password;
     
