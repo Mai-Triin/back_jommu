@@ -1,6 +1,6 @@
 package ee.valiit.back_jommu.domain.userrole.user;
 
-import ee.valiit.back_jommu.login.UserDto;
+import ee.valiit.back_jommu.business.login.UserDto;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")

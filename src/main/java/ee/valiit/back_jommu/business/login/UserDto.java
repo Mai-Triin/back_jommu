@@ -1,4 +1,4 @@
-package ee.valiit.back_jommu.login;
+package ee.valiit.back_jommu.business.login;
 
 import ee.valiit.back_jommu.domain.userrole.user.User;
 import lombok.AllArgsConstructor;

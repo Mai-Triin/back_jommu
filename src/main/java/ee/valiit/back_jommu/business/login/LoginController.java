@@ -1,5 +1,7 @@
-package ee.valiit.back_jommu.login;
+package ee.valiit.back_jommu.business.login;
 
+import ee.valiit.back_jommu.business.register.RegisterRequest;
+import ee.valiit.back_jommu.business.register.RegisterResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +22,5 @@ public class LoginController {
                               @RequestParam String roleType) {
         UserDto login = loginService.loginUser(username, password, roleType);
         return login;
-    }
-
-    @PostMapping("/register")
-    public RegisterResponse registerUser(@RequestBody RegisterRequest request) {
-        log.info(request.toString());
-        return null;
     }
 }

@@ -1,5 +1,6 @@
-package ee.valiit.back_jommu.domain.userrole.role;
+package ee.valiit.back_jommu.business.role;
 
+import ee.valiit.back_jommu.domain.userrole.role.RoleDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

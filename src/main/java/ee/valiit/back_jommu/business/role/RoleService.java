@@ -1,5 +1,9 @@
-package ee.valiit.back_jommu.domain.userrole.role;
+package ee.valiit.back_jommu.business.role;
 
+import ee.valiit.back_jommu.domain.userrole.role.Role;
+import ee.valiit.back_jommu.domain.userrole.role.RoleDto;
+import ee.valiit.back_jommu.domain.userrole.role.RoleMapper;
+import ee.valiit.back_jommu.domain.userrole.role.RoleRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package ee.valiit.back_jommu.login;
+package ee.valiit.back_jommu.business.register;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
