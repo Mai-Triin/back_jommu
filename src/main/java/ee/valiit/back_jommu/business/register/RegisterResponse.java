@@ -12,6 +12,4 @@ import java.io.Serializable;
 public class RegisterResponse implements Serializable {
 
     private Integer userId;
-    private Integer roleId;
-    private String roleType;
 }

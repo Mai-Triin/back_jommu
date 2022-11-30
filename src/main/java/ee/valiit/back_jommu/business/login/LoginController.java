@@ -1,7 +1,5 @@
 package ee.valiit.back_jommu.business.login;
 
-import ee.valiit.back_jommu.business.register.RegisterRequest;
-import ee.valiit.back_jommu.business.register.RegisterResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
