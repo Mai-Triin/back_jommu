@@ -1,8 +1,8 @@
 package ee.valiit.back_jommu.domain.profile;
 
 
+import ee.valiit.back_jommu.business.register.RegisterResponse;
 import ee.valiit.back_jommu.domain.userrole.role.Role;
-import ee.valiit.back_jommu.domain.userrole.role.RoleMapper;
 import ee.valiit.back_jommu.domain.userrole.role.RoleRepository;
 import ee.valiit.back_jommu.domain.userrole.user.User;
 import ee.valiit.back_jommu.domain.userrole.user.UserMapper;
@@ -24,15 +24,12 @@ public class ProfileService {
     private RoleRepository roleRepository;
 
     @Resource
-    private RoleMapper roleMapper;
-
-    @Resource
     private UserMapper userMapper;
 
     @Resource
     private UserRepository userRepository;
 
-    public void registerUser(ProfileRequest request) {
+    public RegisterResponse registerUser(ProfileRequest request) {
         Profile profile = profileMapper.toProfile(request);
         profileRepository.save(profile);
 
@@ -42,5 +39,10 @@ public class ProfileService {
         user.setProfile(profile);
         userRepository.save(user);
 
+        User userIdEntity = userRepository.findById(user.getId()).get();
+        RegisterResponse registerResponse = userMapper.responseToDto(userIdEntity);
+        return registerResponse;
+
     }
+
 }

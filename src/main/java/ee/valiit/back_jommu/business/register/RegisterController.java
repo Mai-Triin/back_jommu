@@ -16,9 +16,7 @@ public class RegisterController {
     private RegisterService registerService;
 
     @PostMapping("/register")
-    public void registerUser(@RequestBody ProfileRequest request) {
-        registerService.registerUser(request);
-
-        log.info(request.toString());
+    public RegisterResponse registerUser(@RequestBody ProfileRequest request) {
+        return registerService.registerUser(request);
     }
 }

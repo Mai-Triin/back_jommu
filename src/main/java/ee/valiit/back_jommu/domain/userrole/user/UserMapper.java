@@ -1,6 +1,7 @@
 package ee.valiit.back_jommu.domain.userrole.user;
 
 import ee.valiit.back_jommu.business.login.UserDto;
+import ee.valiit.back_jommu.business.register.RegisterResponse;
 import ee.valiit.back_jommu.domain.profile.ProfileRequest;
 import org.mapstruct.*;
 
@@ -15,5 +16,9 @@ public interface UserMapper {
     @Mapping(source = "username", target = "username")
     @Mapping(source = "password", target = "password")
     User toUser(ProfileRequest request);
+
+
+    @Mapping(source = "id", target = "userId")
+    RegisterResponse responseToDto(User user);
 
 }

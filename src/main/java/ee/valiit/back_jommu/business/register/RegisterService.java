@@ -12,7 +12,8 @@ public class RegisterService {
     @Resource
     private ProfileService profileService;
 
-    public void registerUser(ProfileRequest request) {
-        profileService.registerUser(request);
+    // täpsusta üle kas siin peaks toimuma mappimine ja entity-d saadetakse domeeni kihti,
+    public RegisterResponse registerUser(ProfileRequest request) {
+        return profileService.registerUser(request);
     }
 }
