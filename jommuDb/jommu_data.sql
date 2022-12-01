@@ -11,3 +11,8 @@ INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (D
 INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'sõrmevenitus', 'kirjeldus2', '''''');
 INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'ajugümnastika', 'kirjeldus3', '''''');
 INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'juuksetõsted', 'kirjeldus4', '''''');
+
+INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Kõht');
+INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Selg');
+INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Jalad');
+INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Käed');
