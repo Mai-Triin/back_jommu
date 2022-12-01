@@ -6,3 +6,8 @@ INSERT INTO public.profile (id, first_name, last_name, date_of_birth, gender, em
 
 INSERT INTO public."user" (id, role_id, profile_id, username, password) VALUES (DEFAULT, 1, 1, 'treener', '123');
 INSERT INTO public."user" (id, role_id, profile_id, username, password) VALUES (DEFAULT, 2, 2, 'treenija', '123');
+
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'silmaringid', 'kirjeldus1', '''''');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'sõrmevenitus', 'kirjeldus2', '''''');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'ajugümnastika', 'kirjeldus3', '''''');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'juuksetõsted', 'kirjeldus4', '''''');

@@ -40,7 +40,7 @@ CREATE TABLE exercise_history (
 CREATE TABLE exercise_template (
                                    id serial  NOT NULL,
                                    name varchar(255)  NOT NULL,
-                                   description text  NOT NULL,
+                                   description varchar(2000)  NOT NULL,
                                    img_data bytea  NOT NULL,
                                    CONSTRAINT exercise_template_pk PRIMARY KEY (id)
 );
