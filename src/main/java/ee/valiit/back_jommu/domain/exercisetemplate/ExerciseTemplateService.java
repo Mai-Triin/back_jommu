@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class ExerciseService {
+public class ExerciseTemplateService {
     @Resource
     private ExerciseTemplateMapper exerciseTemplateMapper;
 

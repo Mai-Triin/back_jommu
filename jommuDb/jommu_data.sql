@@ -16,3 +16,8 @@ INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Kõht');
 INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Selg');
 INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Jalad');
 INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Käed');
+
+INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, muscle_group_id) VALUES (DEFAULT, 1, 1);
+INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, muscle_group_id) VALUES (DEFAULT, 2, 2);
+INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, muscle_group_id) VALUES (DEFAULT, 3, 3);
+INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, muscle_group_id) VALUES (DEFAULT, 4, 4);
