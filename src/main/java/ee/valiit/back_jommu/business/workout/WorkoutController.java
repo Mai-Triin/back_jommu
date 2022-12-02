@@ -2,7 +2,7 @@ package ee.valiit.back_jommu.business.workout;
 
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
-import ee.valiit.back_jommu.domain.musclegroup.MuscleGroupDto;
+import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +28,9 @@ public class WorkoutController {
 
     @GetMapping("/extempmusclegroup")
     @Operation(summary = "Leiab kõik harjutused ja lihasgrupid")
-    public List<ExTempMuscleGroupDto> getAllExTempMuscleInfo() {
-        List<ExTempMuscleGroupDto> allExTempMuscleInfo = workoutService.getAllExTempMuscleInfo();
-        log.info(allExTempMuscleInfo.toString());
-        return allExTempMuscleInfo;
+    public List<ExerciseTemplateTableDto> getAllExerciseTempTableInfo() {
+        List<ExerciseTemplateTableDto> tempTableInfo = workoutService.getAllExerciseTempTableInfo();
+        return tempTableInfo;
     }
 
 }

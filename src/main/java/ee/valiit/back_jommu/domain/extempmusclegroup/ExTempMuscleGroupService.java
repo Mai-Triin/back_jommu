@@ -14,10 +14,10 @@ public class ExTempMuscleGroupService {
     @Resource
     private ExTempMuscleGroupRepository exTempMuscleGroupRepository;
 
-    public List<ExTempMuscleGroupDto> getAllExTempMuscleInfo() {
+    public List<ExerciseTemplateTableDto> getAllExerciseTempTableInfo() {
         List<ExTempMuscleGroup> exTempMuscleGroups = exTempMuscleGroupRepository.findAll();
-        List<ExTempMuscleGroupDto> exTempMuscleGroupDtos = exTempMuscleGroupMapper.toExTempMuscleGroupDtos(exTempMuscleGroups);
-        return exTempMuscleGroupDtos;
+        List<ExerciseTemplateTableDto> templateTableDtos = exTempMuscleGroupMapper.toExTempTableDtos(exTempMuscleGroups);
+        return templateTableDtos;
     }
 
 }

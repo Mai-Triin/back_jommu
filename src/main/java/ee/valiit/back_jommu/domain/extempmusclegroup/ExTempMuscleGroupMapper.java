@@ -17,4 +17,12 @@ public interface ExTempMuscleGroupMapper {
 
     List<ExTempMuscleGroupDto> toExTempMuscleGroupDtos(List<ExTempMuscleGroup> exTempMuscleGroups);
 
+    @Mapping(source = "exerciseTemplate.id", target = "exerciseTemplateId")
+    @Mapping(source = "exerciseTemplate.name", target = "exerciseTemplateName")
+    @Mapping(source = "muscleGroup.name", target = "muscleGroupName")
+    ExerciseTemplateTableDto toExTempTableDto(ExTempMuscleGroup exTempMuscleGroup);
+
+    List<ExerciseTemplateTableDto> toExTempTableDtos(List<ExTempMuscleGroup> exTempMuscleGroups);
+
+
 }

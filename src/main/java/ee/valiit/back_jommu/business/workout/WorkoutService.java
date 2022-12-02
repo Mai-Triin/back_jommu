@@ -2,8 +2,8 @@ package ee.valiit.back_jommu.business.workout;
 
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateService;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
-import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupService;
+import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,6 +15,7 @@ public class WorkoutService {
    private ExerciseTemplateService exerciseTemplateService;
 
 
+
     @Resource
     private ExTempMuscleGroupService exTempMuscleGroupService;
 
@@ -23,8 +24,8 @@ public class WorkoutService {
         return allExerciseInfo;
     }
 
-    public List<ExTempMuscleGroupDto> getAllExTempMuscleInfo() {
-        List<ExTempMuscleGroupDto> allExTempMuscleInfo = exTempMuscleGroupService.getAllExTempMuscleInfo();
-        return allExTempMuscleInfo;
+    public List<ExerciseTemplateTableDto> getAllExerciseTempTableInfo() {
+        List<ExerciseTemplateTableDto> tempTableInfo = exTempMuscleGroupService.getAllExerciseTempTableInfo();
+        return tempTableInfo;
     }
 }
