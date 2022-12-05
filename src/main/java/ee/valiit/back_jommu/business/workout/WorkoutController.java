@@ -1,12 +1,12 @@
 package ee.valiit.back_jommu.business.workout;
 
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
-import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
+import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanRequest;
+import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -31,6 +31,19 @@ public class WorkoutController {
     public List<ExerciseTemplateTableDto> getAllExerciseTempTableInfo() {
         List<ExerciseTemplateTableDto> tempTableInfo = workoutService.getAllExerciseTempTableInfo();
         return tempTableInfo;
+    }
+
+    @PostMapping("/workoutplan/info")
+    @Operation(summary = "Lisab workoutPlan tabelisse workoutPlan info ")
+    public WorkoutPlanResponse addWorkoutPlanInfo(@RequestBody WorkoutPlanRequest request) {
+       return workoutService.addWorkoutPlanInfo(request);
+    }
+
+    @GetMapping("/allworkoutplan/info")
+    @Operation(summary = "Leiab workoutPlan tabelisse lisatud treeningkavad dropdown-i jaoks ")
+    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo() {
+        List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutService.getAllWorkoutPlanInfo();
+        return allWorkoutPlanInfo;
     }
 
 }

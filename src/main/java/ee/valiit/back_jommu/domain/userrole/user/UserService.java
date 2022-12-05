@@ -1,5 +1,6 @@
 package ee.valiit.back_jommu.domain.userrole.user;
 
+import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlan;
 import ee.valiit.back_jommu.validation.Validation;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,12 @@ public class UserService {
         Optional<User> userOptional = userRepository.findUserByRole(username, password, roleType);
         Validation.validateUserCredentials(userOptional);
         User user = userOptional.get();
+        return user;
+    }
+
+
+    public User findById(Integer userId) {
+        User user = userRepository.findById(userId).get();
         return user;
     }
 }
