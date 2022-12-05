@@ -1,5 +1,6 @@
 package ee.valiit.back_jommu.business.workout;
 
+import ee.valiit.back_jommu.domain.exercise.ExerciseRequest;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
 import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanRequest;
@@ -40,10 +41,16 @@ public class WorkoutController {
     }
 
     @GetMapping("/allworkoutplan/info")
-    @Operation(summary = "Leiab workoutPlan tabelisse lisatud treeningkavad dropdown-i jaoks ")
+    @Operation(summary = "Leiab workoutPlan tabelisse lisatud treeningkavad dropdown-i jaoks")
     public List<WorkoutPlanResponse> getAllWorkoutPlanInfo() {
         List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutService.getAllWorkoutPlanInfo();
         return allWorkoutPlanInfo;
+    }
+
+    @PostMapping("/exercise/additional/info")
+    @Operation(summary = "Lisab exercise tabelisse harjutuste info")
+    public void addExerciseInfo(@RequestBody ExerciseRequest request) {
+        workoutService.addExerciseInfo(request);
     }
 
 }

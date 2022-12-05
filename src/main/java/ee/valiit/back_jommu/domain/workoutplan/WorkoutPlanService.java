@@ -25,4 +25,9 @@ public class WorkoutPlanService {
         List<WorkoutPlanResponse> workoutPlanResponses = workoutPlanMapper.toWorkoutPlanDtos(workoutPlans);
         return workoutPlanResponses;
     }
+
+    public WorkoutPlan findById(Integer workoutPlan) {
+        WorkoutPlan workoutPlanEntity = workoutPlanRepository.findById(workoutPlan).get();
+        return workoutPlanEntity;
+    }
 }
