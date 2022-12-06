@@ -1,9 +1,6 @@
 package ee.valiit.back_jommu.business.workout;
 
-import ee.valiit.back_jommu.domain.exercise.Exercise;
-import ee.valiit.back_jommu.domain.exercise.ExerciseMapper;
-import ee.valiit.back_jommu.domain.exercise.ExerciseRequest;
-import ee.valiit.back_jommu.domain.exercise.ExerciseService;
+import ee.valiit.back_jommu.domain.exercise.*;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplate;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateMapper;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateService;
@@ -79,5 +76,9 @@ public class WorkoutService {
         exerciseService.addExercise(exercise);
 
 
+    }
+
+    public List<ExerciseDto> getAllExerciseTableInfo(Integer workoutPlanId) {
+        return exerciseService.getAllExerciseTableInfo(workoutPlanId);
     }
 }
