@@ -43,8 +43,9 @@ public class WorkoutController {
 
     @GetMapping("/allworkoutplan/info")
     @Operation(summary = "Leiab workoutPlan tabelisse lisatud treeningkavad dropdown-i jaoks")
-    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo() {
-        List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutService.getAllWorkoutPlanInfo();
+    //siia lisa find by user id
+    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo(@RequestParam Integer userId) {
+        List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutService.getAllWorkoutPlanInfo(userId);
         return allWorkoutPlanInfo;
     }
 

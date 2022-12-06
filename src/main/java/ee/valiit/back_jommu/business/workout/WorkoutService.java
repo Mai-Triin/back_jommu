@@ -62,8 +62,8 @@ public class WorkoutService {
         return workoutPlanResponse;
     }
 
-    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo() {
-        List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutPlanService.getAllWorkoutPlanInfo();
+    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo(Integer userId) {
+        List<WorkoutPlanResponse> allWorkoutPlanInfo = workoutPlanService.getAllWorkoutPlanInfo(userId);
         return allWorkoutPlanInfo;
     }
 

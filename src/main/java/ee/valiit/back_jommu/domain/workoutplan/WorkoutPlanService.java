@@ -20,9 +20,9 @@ public class WorkoutPlanService {
         workoutPlanRepository.save(workoutPlan);
     }
 
-    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo() {
-        List<WorkoutPlan> workoutPlans = workoutPlanRepository.findAll();
-        List<WorkoutPlanResponse> workoutPlanResponses = workoutPlanMapper.toWorkoutPlanDtos(workoutPlans);
+    public List<WorkoutPlanResponse> getAllWorkoutPlanInfo(Integer userId) {
+        List<WorkoutPlan> workoutPlansById = workoutPlanRepository.findWorkoutBy(userId);
+        List<WorkoutPlanResponse> workoutPlanResponses = workoutPlanMapper.toWorkoutPlanDtos(workoutPlansById);
         return workoutPlanResponses;
     }
 
