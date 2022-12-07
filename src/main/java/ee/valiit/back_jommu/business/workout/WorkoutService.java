@@ -103,4 +103,9 @@ public class WorkoutService {
         List<ExTempMuscleGroupDto> exTempsByMuscleGroupId = exTempMuscleGroupService.findExTempsBy(muscleGroupId);
         return exTempsByMuscleGroupId;
     }
+
+//    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
+//        exerciseService.findAllWorkoutPlanInfo();
+//        return null;
+//    }
 }

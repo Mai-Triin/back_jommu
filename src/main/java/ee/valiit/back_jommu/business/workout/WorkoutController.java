@@ -3,6 +3,7 @@ package ee.valiit.back_jommu.business.workout;
 import ee.valiit.back_jommu.domain.exercise.ExerciseDisableDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseRequest;
+import ee.valiit.back_jommu.domain.exercise.WorkoutPlanExerciseDto;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
@@ -84,10 +85,15 @@ public class WorkoutController {
         return exTempByMuscleGroupId;
     }
 
-
     @GetMapping("/description/info")
     @Operation(summary = "Leiab exercise template tabelist harjutuse info vastavalt exerciseTemplate Id-le")
     public ExerciseTemplateDto getDescriptionInfo(@RequestParam Integer exerciseTempId) {
         return workoutService.getDescriptionInfo(exerciseTempId);
+    }
+
+    @GetMapping("/workoutPlan/table/info")
+    @Operation(summary = "Leiab kõik treeningkavad")
+    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
+        workoutService.findAllWorkoutPlanInfo();
     }
 }

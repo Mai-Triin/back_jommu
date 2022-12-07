@@ -39,4 +39,9 @@ public class ExerciseService {
         exercise.setStatus("D");
         exerciseRepository.save(exercise);
     }
+
+//    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
+//        exerciseRepository.
+//        return null;
+//    }
 }

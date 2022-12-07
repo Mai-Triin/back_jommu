@@ -7,12 +7,12 @@ INSERT INTO public.profile (id, first_name, last_name, date_of_birth, gender, em
 INSERT INTO public."user" (id, role_id, profile_id, username, password) VALUES (DEFAULT, 1, 1, 'treener', '123');
 INSERT INTO public."user" (id, role_id, profile_id, username, password) VALUES (DEFAULT, 2, 2, 'treenija', '123');
 
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'silmaringid', 'kirjeldus1', '''''');
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'sõrmesirutus', 'kirjeldus2', '''''');
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'ajuraputus', 'kirjeldus3', '''''');
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'juuksetõsted', 'kirjeldus4', '''''');
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'varbavenitus', 'kirjeldus4', '''''');
-INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'nabakummardus', 'kirjeldus4', '''''');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'silmaringid', 'kirjeldus1', 'null');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'sõrmesirutus', 'kirjeldus2', 'null');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'ajuraputus', 'kirjeldus3', 'null');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'juuksetõsted', 'kirjeldus4', 'null');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'varbavenitus', 'kirjeldus4', 'null');
+INSERT INTO public.exercise_template (id, name, description, img_data) VALUES (DEFAULT, 'nabakummardus', 'kirjeldus4', 'null');
 
 INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Pea');
 INSERT INTO public.muscle_group (id, name) VALUES (DEFAULT, 'Keha');
