@@ -21,5 +21,9 @@ public interface ExerciseMapper {
 
     List<ExerciseDto> toExerciseDtos(List<Exercise> exercises);
 
+    @Mapping(source = "exerciseId", target = "id")
+    @Mapping(source = "exerciseStatus", target = "status")
+    Exercise toExercise(ExerciseDisableDto exerciseDisableDto);
+
 
 }
