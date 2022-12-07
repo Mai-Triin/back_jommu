@@ -4,7 +4,9 @@ import ee.valiit.back_jommu.domain.exercise.ExerciseDisableDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseRequest;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
+import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
+import ee.valiit.back_jommu.domain.musclegroup.MuscleGroupDto;
 import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanRequest;
 import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -67,4 +69,19 @@ public class WorkoutController {
     public void disableExerciseinfo(@RequestBody ExerciseDisableDto request) {
         workoutService.disableExerciseInfo(request);
     }
+
+    @GetMapping("/all/musclegroups")
+    @Operation(summary = "Leiab kõik lihasgrupid (nupud")
+    public List<MuscleGroupDto> getAllMuscleGroups() {
+        List<MuscleGroupDto> allMuscleGroups = workoutService.getAllMuscleGroups();
+        return allMuscleGroups;
+    }
+
+    @GetMapping("/extemp/bymusclegroupid")
+    @Operation(summary = "Leiab harjutused vastava lihasgrupi id-le")
+    public List<ExTempMuscleGroupDto> getExTempByMuscleGroupId(@RequestParam Integer muscleGroupId) {
+        List<ExTempMuscleGroupDto> exTempByMuscleGroupId = workoutService.getExTempByMuscleGroupId(muscleGroupId);
+        return exTempByMuscleGroupId;
+    }
+
 }

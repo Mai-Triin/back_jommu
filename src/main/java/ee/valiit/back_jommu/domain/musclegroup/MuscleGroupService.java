@@ -14,6 +14,16 @@ public class MuscleGroupService {
     @Resource
     private MuscleGroupRepository muscleGroupRepository;
 
+
+    public List<MuscleGroupDto> getAllMuscleGroups() {
+        List<MuscleGroup> muscleGroups = muscleGroupRepository.findAll();
+        List<MuscleGroupDto> muscleGroupDtos = muscleGroupMapper.toMuscleGroupDtos(muscleGroups);
+        return muscleGroupDtos;
+
+    }
+
+
+
 //    public List<MuscleGroupDto> getAllMuscleInfo() {
 //        List<MuscleGroup> muscleGroups = muscleGroupRepository.findAll();
 //        List<MuscleGroupDto> muscleGroupDtos = muscleGroupMapper.toMuscleGroupDtos(muscleGroups);
