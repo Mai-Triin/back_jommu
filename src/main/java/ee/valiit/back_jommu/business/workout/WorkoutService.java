@@ -5,8 +5,11 @@ import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplate;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateMapper;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateService;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
+import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupService;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
+import ee.valiit.back_jommu.domain.musclegroup.MuscleGroupDto;
+import ee.valiit.back_jommu.domain.musclegroup.MuscleGroupService;
 import ee.valiit.back_jommu.domain.userrole.user.User;
 import ee.valiit.back_jommu.domain.userrole.user.UserService;
 import ee.valiit.back_jommu.domain.workoutplan.*;
@@ -40,6 +43,9 @@ public class WorkoutService {
 
     @Resource
     private ExerciseService exerciseService;
+
+    @Resource
+    private MuscleGroupService muscleGroupService;
 
     public List<ExerciseTemplateDto> getAllExerciseInfo() {
         List<ExerciseTemplateDto> allExerciseInfo = exerciseTemplateService.getAllExerciseInfo();
@@ -87,5 +93,14 @@ public class WorkoutService {
 
     public ExerciseTemplateDto getDescriptionInfo(Integer exerciseTempId) {
         return exerciseTemplateService.getDescriptionInfo(exerciseTempId);
+    }
+
+    public List<MuscleGroupDto> getAllMuscleGroups() {
+        return muscleGroupService.getAllMuscleGroups();
+    }
+
+    public List<ExTempMuscleGroupDto> getExTempByMuscleGroupId(Integer muscleGroupId) {
+        List<ExTempMuscleGroupDto> exTempsByMuscleGroupId = exTempMuscleGroupService.findExTempsBy(muscleGroupId);
+        return exTempsByMuscleGroupId;
     }
 }

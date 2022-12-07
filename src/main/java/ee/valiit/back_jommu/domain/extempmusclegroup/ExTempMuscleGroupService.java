@@ -20,4 +20,9 @@ public class ExTempMuscleGroupService {
         return templateTableDtos;
     }
 
+    public List<ExTempMuscleGroupDto> findExTempsBy(Integer muscleGroupId) {
+        List<ExTempMuscleGroup> byMuscleGroupId = exTempMuscleGroupRepository.findByMuscleGroupId(muscleGroupId);
+        List<ExTempMuscleGroupDto> exTempMuscleGroupDtos = exTempMuscleGroupMapper.toExTempMuscleGroupDtos(byMuscleGroupId);
+        return exTempMuscleGroupDtos;
+    }
 }
