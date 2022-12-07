@@ -35,4 +35,10 @@ public class ExerciseTemplateService {
         exerciseTemplateRepository.save(exerciseTemplate);
     }
 
+    public ExerciseTemplateDto getDescriptionInfo(Integer exerciseTempId) {
+        Optional<ExerciseTemplate> exerciseTemplate = exerciseTemplateRepository.findById(exerciseTempId);
+        ExerciseTemplate exerciseTemplateEntity = exerciseTemplate.get();
+        ExerciseTemplateDto exerciseTemplateDto = exerciseTemplateMapper.toTempDto(exerciseTemplateEntity);
+        return exerciseTemplateDto;
+    }
 }

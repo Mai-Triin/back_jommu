@@ -60,4 +60,10 @@ public class WorkoutController {
     public List<ExerciseDto> getAllExerciseTableInfo(@RequestParam Integer workoutPlanId) {
         return workoutService.getAllExerciseTableInfo(workoutPlanId);
     }
+
+    @GetMapping("/description/info")
+    @Operation(summary = "Leiab exercise template tabelist harjutuse info vastavalt exerciseTemplate Id-le")
+    public ExerciseTemplateDto getDescriptionInfo(@RequestParam Integer exerciseTempId) {
+        return workoutService.getDescriptionInfo(exerciseTempId);
+    }
 }

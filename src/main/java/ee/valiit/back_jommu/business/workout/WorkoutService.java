@@ -81,4 +81,8 @@ public class WorkoutService {
     public List<ExerciseDto> getAllExerciseTableInfo(Integer workoutPlanId) {
         return exerciseService.getAllExerciseTableInfo(workoutPlanId);
     }
+
+    public ExerciseTemplateDto getDescriptionInfo(Integer exerciseTempId) {
+        return exerciseTemplateService.getDescriptionInfo(exerciseTempId);
+    }
 }
