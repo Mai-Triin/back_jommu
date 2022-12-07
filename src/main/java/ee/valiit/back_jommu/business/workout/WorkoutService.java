@@ -74,11 +74,14 @@ public class WorkoutService {
         exercise.setWorkoutPlan(workoutPlanEntity);
         exercise.setExerciseTemplate(exerciseTemplate);
         exerciseService.addExercise(exercise);
-
-
     }
 
     public List<ExerciseDto> getAllExerciseTableInfo(Integer workoutPlanId) {
         return exerciseService.getAllExerciseTableInfo(workoutPlanId);
+    }
+
+    public void disableExerciseInfo(ExerciseDisableDto request) {
+        Exercise exercise = exerciseService.getExerciseById(request.getExerciseId());
+        exerciseService.disableExerciseStatus(exercise);
     }
 }

@@ -1,5 +1,6 @@
 package ee.valiit.back_jommu.business.workout;
 
+import ee.valiit.back_jommu.domain.exercise.ExerciseDisableDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseDto;
 import ee.valiit.back_jommu.domain.exercise.ExerciseRequest;
 import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
@@ -59,5 +60,11 @@ public class WorkoutController {
     @Operation(summary = "Leiab exercise tabelist harjutuste täiendatud info")
     public List<ExerciseDto> getAllExerciseTableInfo(@RequestParam Integer workoutPlanId) {
         return workoutService.getAllExerciseTableInfo(workoutPlanId);
+    }
+
+    @PatchMapping("/disable/exercise/info")
+    @Operation(summary = "Muudab exercise tabelis välja 'status' ära disable-iks ehk 'D'")
+    public void disableExerciseinfo(@RequestBody ExerciseDisableDto request) {
+        workoutService.disableExerciseInfo(request);
     }
 }
