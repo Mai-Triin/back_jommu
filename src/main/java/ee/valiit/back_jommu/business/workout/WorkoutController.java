@@ -8,6 +8,8 @@ import ee.valiit.back_jommu.domain.exercisetemplate.ExerciseTemplateDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExTempMuscleGroupDto;
 import ee.valiit.back_jommu.domain.extempmusclegroup.ExerciseTemplateTableDto;
 import ee.valiit.back_jommu.domain.musclegroup.MuscleGroupDto;
+import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanDto;
+import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanNameDto;
 import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanRequest;
 import ee.valiit.back_jommu.domain.workoutplan.WorkoutPlanResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -97,4 +99,12 @@ public class WorkoutController {
     public List<WorkoutPlanExerciseDto> getAllWorkoutPlanInfoByUser(@RequestParam Integer userId) {
         return workoutService.getAllWorkoutPlanInfoByUser(userId);
     }
+
+    @GetMapping("/workoutplan/name")
+    @Operation(summary = "Leiab kõik treeningkava nimed")
+    public List<WorkoutPlanNameDto> findAllWorkoutPlanNames(@RequestParam Integer userId) {
+        return workoutService.findAllWorkoutPlanNames(userId);
+    }
+
+
 }

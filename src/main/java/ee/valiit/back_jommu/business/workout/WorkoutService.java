@@ -115,4 +115,8 @@ public class WorkoutService {
 
         return result;
     }
+
+    public List<WorkoutPlanNameDto> findAllWorkoutPlanNames(Integer userId) {
+        return workoutPlanService.findAllWorkoutPlanNames(userId);
+    }
 }

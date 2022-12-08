@@ -35,4 +35,10 @@ public class WorkoutPlanService {
         List<WorkoutPlan> workouts = workoutPlanRepository.findWorkoutBy(userId);
         return workouts;
     }
+
+    public List<WorkoutPlanNameDto> findAllWorkoutPlanNames(Integer userId) {
+        List<WorkoutPlan> workouts = workoutPlanRepository.findWorkoutBy(userId);
+        List<WorkoutPlanNameDto> workoutPlanNameDtos = workoutPlanMapper.toWorkoutPlanNameDtos(workouts);
+        return workoutPlanNameDtos;
+    }
 }
