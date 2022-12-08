@@ -27,9 +27,14 @@ INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, mus
 INSERT INTO public.exercise_template_muscle_group (id, exercise_template_id, muscle_group_id) VALUES (DEFAULT, 6, 2);
 
 INSERT INTO public.workout_plan (id, name, user_id, status) VALUES (DEFAULT, 'Peagümnastika', 2, 'A');
+INSERT INTO public.workout_plan (id, name, user_id, status) VALUES (DEFAULT, 'Keha äratus', 2, 'A');
+
 
 INSERT INTO public.exercise (id, workout_plan_id, exercise_template_id, reps, sets, weight, status) VALUES (DEFAULT, 1, 1, 12, 3, 0, 'A');
 INSERT INTO public.exercise (id, workout_plan_id, exercise_template_id, reps, sets, weight, status) VALUES (DEFAULT, 1, 3, 3, 2, 5, 'A');
+INSERT INTO public.exercise (id, workout_plan_id, exercise_template_id, reps, sets, weight, status) VALUES (DEFAULT, 2, 6, 10, 10, 5, 'A');
+INSERT INTO public.exercise (id, workout_plan_id, exercise_template_id, reps, sets, weight, status) VALUES (DEFAULT, 2, 2, 10, 10, 5, 'A');
+INSERT INTO public.exercise (id, workout_plan_id, exercise_template_id, reps, sets, weight, status) VALUES (DEFAULT, 2, 5, 10, 10, 5, 'A');
 
 
 
