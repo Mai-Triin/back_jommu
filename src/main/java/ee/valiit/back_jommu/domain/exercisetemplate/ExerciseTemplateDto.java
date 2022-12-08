@@ -22,5 +22,5 @@ public class ExerciseTemplateDto implements Serializable {
     @NotNull
     private String description;
     @NotNull
-    private byte[] imgData;
+    private String imgData;
 }
