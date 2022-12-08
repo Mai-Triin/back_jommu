@@ -30,4 +30,9 @@ public class WorkoutPlanService {
         WorkoutPlan workoutPlanEntity = workoutPlanRepository.findById(workoutPlan).get();
         return workoutPlanEntity;
     }
+
+    public List<WorkoutPlan> findWorkoutPlansBy(Integer userId) {
+        List<WorkoutPlan> workouts = workoutPlanRepository.findWorkoutBy(userId);
+        return workouts;
+    }
 }

@@ -104,8 +104,15 @@ public class WorkoutService {
         return exTempsByMuscleGroupId;
     }
 
-//    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
-//        exerciseService.findAllWorkoutPlanInfo();
-//        return null;
-//    }
+    public List<WorkoutPlanExerciseDto> getAllWorkoutPlanInfoByUser(Integer userId) {
+        List<WorkoutPlan> workouts = workoutPlanService.findWorkoutPlansBy(userId);
+        List<WorkoutPlanExerciseDto> result = workoutPlanMapper.toWorkoutPlanExerciseDtos(workouts);
+        for (WorkoutPlanExerciseDto dto : result) {
+            List<Exercise> exercises = exerciseService.getExerciseBy(dto.getWorkoutPlanId());
+            List<ExerciseDto> exerciseDtos = exerciseMapper.toExerciseDtos(exercises);
+            dto.setExercises(exerciseDtos);
+        }
+
+        return result;
+    }
 }

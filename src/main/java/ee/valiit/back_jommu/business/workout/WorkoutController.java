@@ -91,9 +91,10 @@ public class WorkoutController {
         return workoutService.getDescriptionInfo(exerciseTempId);
     }
 
-//    @GetMapping("/workoutPlan/table/info")
-//    @Operation(summary = "Leiab kõik treeningkavad")
-//    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
-//        workoutService.findAllWorkoutPlanInfo();
-//    }
+
+    @GetMapping("/workoutplan/table")
+    @Operation(summary = "Leiab kõik treeningkavad ja nendele vastavad harjutused")
+    public List<WorkoutPlanExerciseDto> getAllWorkoutPlanInfoByUser(@RequestParam Integer userId) {
+        return workoutService.getAllWorkoutPlanInfoByUser(userId);
+    }
 }

@@ -1,5 +1,7 @@
 package ee.valiit.back_jommu.domain.workoutplan;
 
+import ee.valiit.back_jommu.domain.exercise.Exercise;
+import ee.valiit.back_jommu.domain.exercise.WorkoutPlanExerciseDto;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -17,6 +19,12 @@ public interface WorkoutPlanMapper {
     WorkoutPlanResponse toWorkoutPlanDto(WorkoutPlan workoutPlan);
 
     List<WorkoutPlanResponse> toWorkoutPlanDtos(List<WorkoutPlan> workoutPlans);
+
+    @Mapping(source = "id", target = "workoutPlanId")
+    @Mapping(source = "name", target = "workoutPlanName")
+    WorkoutPlanExerciseDto toWorkoutPlanExerciseDto(WorkoutPlan exercise);
+
+    List<WorkoutPlanExerciseDto> toWorkoutPlanExerciseDtos(List<WorkoutPlan> exercises);
 
 
 

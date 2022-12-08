@@ -3,8 +3,6 @@ package ee.valiit.back_jommu.domain.exercise;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,8 +38,8 @@ public class ExerciseService {
         exerciseRepository.save(exercise);
     }
 
-//    public WorkoutPlanExerciseDto findAllWorkoutPlanInfo() {
-//        exerciseRepository.
-//        return null;
-//    }
+
+    public List<Exercise> getExerciseBy(Integer workoutPlanId) {
+        return exerciseRepository.findExercisesBy(workoutPlanId, "A");
+    }
 }
